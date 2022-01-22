@@ -4,9 +4,11 @@ clean:
 	rm pb/*.go
 run:
 	go run cmd/main.go
-client-call:
+streamresponse-client:
 	go run cmd/client/main.go
 server:
 	go run cmd/server/main.go
-stream-client:
-	go run cmd/streamclient/main.go
+streamrequest-client:
+	go run cmd/imageuploadclient/main.go
+customerservice-client:
+	go run cmd/customersupportclient/main.go

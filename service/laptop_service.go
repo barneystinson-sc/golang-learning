@@ -1,6 +1,7 @@
 package service
 
 import (
+	"bufio"
 	"bytes"
 	"context"
 	"fmt"
@@ -8,6 +9,8 @@ import (
 	"golang-learning/sample"
 	"io"
 	"log"
+	"os"
+	"strings"
 	"time"
 
 	"google.golang.org/grpc/codes"
@@ -120,4 +123,59 @@ func (server *LaptopServer) UploadImageService(stream pb.LaptopCPUService_Upload
 		return status.Error(codes.Internal, "cannot close the stream")
 	}
 	return nil
+}
+
+func (server *LaptopServer) CustomerSupportService(stream pb.LaptopCPUService_CustomerSupportServiceServer) error {
+	// responseMsg := &pb.CustomerSupportResponse{Message: "Welcome to customer service support! How may I help you"}
+	// stream.Send(responseMsg)
+	// for {
+	// 	req, err := stream.Recv()
+	// 	if err != nil {
+	// 		log.Println("Error in stream receive", err)
+	// 		return status.Error(codes.Internal, "Unable to receive message")
+	// 	}
+	// 	fmt.Println("Message from client is :", req.GetMessage())
+	// 	if req.GetMessage() == "EOF" {
+	// 		finalResponseMsg := &pb.CustomerSupportResponse{Message: "Thankyou for connecting with our chat support!"}
+	// 		stream.Send(finalResponseMsg)
+	// 		break
+	// 	} else {
+	// 		reader := bufio.NewReader(os.Stdin)
+	// 		fmt.Print("Enter your message: ")
+	// 		text, _ := reader.ReadString('\n')
+	// 		serverResponse := &pb.CustomerSupportResponse{Message: text}
+	// 		stream.Send(serverResponse)
+	// 	}
+	// }
+	waitResponse := make(chan error)
+	responseMsg := &pb.CustomerSupportResponse{Message: "Welcome to customer service support! How may I help you"}
+	stream.Send(responseMsg)
+	go func() error {
+		for {
+			req, err := stream.Recv()
+			if err == io.EOF {
+				log.Println("Input stream ended", err)
+				waitResponse <- nil
+			}
+			if err != nil {
+				log.Println("Error in stream receive", err)
+				waitResponse <- err
+			}
+			fmt.Println("Message from client is :", req.GetMessage())
+		}
+
+	}()
+	for true {
+		reader := bufio.NewReader(os.Stdin)
+		// fmt.Println("Enter your message: ")
+		text, _ := reader.ReadString('\n')
+		text = strings.TrimSuffix(text, "\n")
+		if text == "EOF" {
+			return nil
+		}
+		serverResponse := &pb.CustomerSupportResponse{Message: text}
+		stream.Send(serverResponse)
+	}
+	err := <-waitResponse
+	return err
 }

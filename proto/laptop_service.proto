@@ -32,8 +32,17 @@ message UploadImageResponse{
     uint32 size = 2;
 }
 
+message CustomerSupportRequest{
+    string message = 1;
+}
+
+message CustomerSupportResponse{
+    string message = 1;
+}
+
 service LaptopCPUService {
     rpc GetCPU (NewLaptopCPU) returns (CPUMessage);
     rpc GetLaptopStreamService (Empty) returns (stream GetLaptopStream);
     rpc UploadImageService(stream UploadImageRequest) returns (UploadImageResponse);
+    rpc CustomerSupportService(stream CustomerSupportRequest) returns(stream CustomerSupportResponse);
 }

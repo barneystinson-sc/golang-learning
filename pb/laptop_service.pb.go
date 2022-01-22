@@ -346,6 +346,100 @@ func (x *UploadImageResponse) GetSize() uint32 {
 	return 0
 }
 
+type CustomerSupportRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Message string `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+}
+
+func (x *CustomerSupportRequest) Reset() {
+	*x = CustomerSupportRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_laptop_service_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CustomerSupportRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CustomerSupportRequest) ProtoMessage() {}
+
+func (x *CustomerSupportRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_laptop_service_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CustomerSupportRequest.ProtoReflect.Descriptor instead.
+func (*CustomerSupportRequest) Descriptor() ([]byte, []int) {
+	return file_laptop_service_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *CustomerSupportRequest) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+type CustomerSupportResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Message string `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+}
+
+func (x *CustomerSupportResponse) Reset() {
+	*x = CustomerSupportResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_laptop_service_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CustomerSupportResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CustomerSupportResponse) ProtoMessage() {}
+
+func (x *CustomerSupportResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_laptop_service_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CustomerSupportResponse.ProtoReflect.Descriptor instead.
+func (*CustomerSupportResponse) Descriptor() ([]byte, []int) {
+	return file_laptop_service_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *CustomerSupportResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
 var File_laptop_service_proto protoreflect.FileDescriptor
 
 var file_laptop_service_proto_rawDesc = []byte{
@@ -376,21 +470,34 @@ var file_laptop_service_proto_rawDesc = []byte{
 	0x64, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x0e,
 	0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12,
 	0x0a, 0x04, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x73, 0x69,
-	0x7a, 0x65, 0x32, 0xd5, 0x01, 0x0a, 0x10, 0x4c, 0x61, 0x70, 0x74, 0x6f, 0x70, 0x43, 0x50, 0x55,
-	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x30, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x43, 0x50,
-	0x55, 0x12, 0x13, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x4e, 0x65, 0x77, 0x4c, 0x61, 0x70,
-	0x74, 0x6f, 0x70, 0x43, 0x50, 0x55, 0x1a, 0x11, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x43,
-	0x50, 0x55, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x40, 0x0a, 0x16, 0x47, 0x65, 0x74,
-	0x4c, 0x61, 0x70, 0x74, 0x6f, 0x70, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x53, 0x65, 0x72, 0x76,
-	0x69, 0x63, 0x65, 0x12, 0x0c, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x45, 0x6d, 0x70, 0x74,
-	0x79, 0x1a, 0x16, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x47, 0x65, 0x74, 0x4c, 0x61, 0x70,
-	0x74, 0x6f, 0x70, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x30, 0x01, 0x12, 0x4d, 0x0a, 0x12, 0x55,
-	0x70, 0x6c, 0x6f, 0x61, 0x64, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x12, 0x19, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64,
-	0x49, 0x6d, 0x61, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x49, 0x6d, 0x61, 0x67, 0x65,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x28, 0x01, 0x42, 0x07, 0x5a, 0x05, 0x2e, 0x2f,
-	0x3b, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x7a, 0x65, 0x22, 0x32, 0x0a, 0x16, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x53, 0x75,
+	0x70, 0x70, 0x6f, 0x72, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x18, 0x0a, 0x07,
+	0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6d,
+	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x33, 0x0a, 0x17, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d,
+	0x65, 0x72, 0x53, 0x75, 0x70, 0x70, 0x6f, 0x72, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x32, 0xb2, 0x02, 0x0a, 0x10,
+	0x4c, 0x61, 0x70, 0x74, 0x6f, 0x70, 0x43, 0x50, 0x55, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x12, 0x30, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x43, 0x50, 0x55, 0x12, 0x13, 0x2e, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x2e, 0x4e, 0x65, 0x77, 0x4c, 0x61, 0x70, 0x74, 0x6f, 0x70, 0x43, 0x50, 0x55, 0x1a,
+	0x11, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x43, 0x50, 0x55, 0x4d, 0x65, 0x73, 0x73, 0x61,
+	0x67, 0x65, 0x12, 0x40, 0x0a, 0x16, 0x47, 0x65, 0x74, 0x4c, 0x61, 0x70, 0x74, 0x6f, 0x70, 0x53,
+	0x74, 0x72, 0x65, 0x61, 0x6d, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x0c, 0x2e, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x16, 0x2e, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x2e, 0x47, 0x65, 0x74, 0x4c, 0x61, 0x70, 0x74, 0x6f, 0x70, 0x53, 0x74, 0x72, 0x65,
+	0x61, 0x6d, 0x30, 0x01, 0x12, 0x4d, 0x0a, 0x12, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x49, 0x6d,
+	0x61, 0x67, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x19, 0x2e, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x2e, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x55, 0x70,
+	0x6c, 0x6f, 0x61, 0x64, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x28, 0x01, 0x12, 0x5b, 0x0a, 0x16, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x53,
+	0x75, 0x70, 0x70, 0x6f, 0x72, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x1d, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x53, 0x75,
+	0x70, 0x70, 0x6f, 0x72, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1e, 0x2e, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x53, 0x75, 0x70,
+	0x70, 0x6f, 0x72, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x28, 0x01, 0x30, 0x01,
+	0x42, 0x07, 0x5a, 0x05, 0x2e, 0x2f, 0x3b, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x33,
 }
 
 var (
@@ -405,27 +512,31 @@ func file_laptop_service_proto_rawDescGZIP() []byte {
 	return file_laptop_service_proto_rawDescData
 }
 
-var file_laptop_service_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_laptop_service_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_laptop_service_proto_goTypes = []interface{}{
-	(*NewLaptopCPU)(nil),        // 0: proto.NewLaptopCPU
-	(*GetLaptopStream)(nil),     // 1: proto.GetLaptopStream
-	(*Empty)(nil),               // 2: proto.Empty
-	(*UploadImageRequest)(nil),  // 3: proto.UploadImageRequest
-	(*ImageInfo)(nil),           // 4: proto.ImageInfo
-	(*UploadImageResponse)(nil), // 5: proto.UploadImageResponse
-	(*CPUMessage)(nil),          // 6: proto.CPUMessage
+	(*NewLaptopCPU)(nil),            // 0: proto.NewLaptopCPU
+	(*GetLaptopStream)(nil),         // 1: proto.GetLaptopStream
+	(*Empty)(nil),                   // 2: proto.Empty
+	(*UploadImageRequest)(nil),      // 3: proto.UploadImageRequest
+	(*ImageInfo)(nil),               // 4: proto.ImageInfo
+	(*UploadImageResponse)(nil),     // 5: proto.UploadImageResponse
+	(*CustomerSupportRequest)(nil),  // 6: proto.CustomerSupportRequest
+	(*CustomerSupportResponse)(nil), // 7: proto.CustomerSupportResponse
+	(*CPUMessage)(nil),              // 8: proto.CPUMessage
 }
 var file_laptop_service_proto_depIdxs = []int32{
-	6, // 0: proto.GetLaptopStream.cPUMessage:type_name -> proto.CPUMessage
+	8, // 0: proto.GetLaptopStream.cPUMessage:type_name -> proto.CPUMessage
 	4, // 1: proto.UploadImageRequest.image_data:type_name -> proto.ImageInfo
 	0, // 2: proto.LaptopCPUService.GetCPU:input_type -> proto.NewLaptopCPU
 	2, // 3: proto.LaptopCPUService.GetLaptopStreamService:input_type -> proto.Empty
 	3, // 4: proto.LaptopCPUService.UploadImageService:input_type -> proto.UploadImageRequest
-	6, // 5: proto.LaptopCPUService.GetCPU:output_type -> proto.CPUMessage
-	1, // 6: proto.LaptopCPUService.GetLaptopStreamService:output_type -> proto.GetLaptopStream
-	5, // 7: proto.LaptopCPUService.UploadImageService:output_type -> proto.UploadImageResponse
-	5, // [5:8] is the sub-list for method output_type
-	2, // [2:5] is the sub-list for method input_type
+	6, // 5: proto.LaptopCPUService.CustomerSupportService:input_type -> proto.CustomerSupportRequest
+	8, // 6: proto.LaptopCPUService.GetCPU:output_type -> proto.CPUMessage
+	1, // 7: proto.LaptopCPUService.GetLaptopStreamService:output_type -> proto.GetLaptopStream
+	5, // 8: proto.LaptopCPUService.UploadImageService:output_type -> proto.UploadImageResponse
+	7, // 9: proto.LaptopCPUService.CustomerSupportService:output_type -> proto.CustomerSupportResponse
+	6, // [6:10] is the sub-list for method output_type
+	2, // [2:6] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
 	2, // [2:2] is the sub-list for extension extendee
 	0, // [0:2] is the sub-list for field type_name
@@ -510,6 +621,30 @@ func file_laptop_service_proto_init() {
 				return nil
 			}
 		}
+		file_laptop_service_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CustomerSupportRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_laptop_service_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CustomerSupportResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	file_laptop_service_proto_msgTypes[3].OneofWrappers = []interface{}{
 		(*UploadImageRequest_ImageData)(nil),
@@ -521,7 +656,7 @@ func file_laptop_service_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_laptop_service_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -550,6 +685,7 @@ type LaptopCPUServiceClient interface {
 	GetCPU(ctx context.Context, in *NewLaptopCPU, opts ...grpc.CallOption) (*CPUMessage, error)
 	GetLaptopStreamService(ctx context.Context, in *Empty, opts ...grpc.CallOption) (LaptopCPUService_GetLaptopStreamServiceClient, error)
 	UploadImageService(ctx context.Context, opts ...grpc.CallOption) (LaptopCPUService_UploadImageServiceClient, error)
+	CustomerSupportService(ctx context.Context, opts ...grpc.CallOption) (LaptopCPUService_CustomerSupportServiceClient, error)
 }
 
 type laptopCPUServiceClient struct {
@@ -635,11 +771,43 @@ func (x *laptopCPUServiceUploadImageServiceClient) CloseAndRecv() (*UploadImageR
 	return m, nil
 }
 
+func (c *laptopCPUServiceClient) CustomerSupportService(ctx context.Context, opts ...grpc.CallOption) (LaptopCPUService_CustomerSupportServiceClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_LaptopCPUService_serviceDesc.Streams[2], "/proto.LaptopCPUService/CustomerSupportService", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &laptopCPUServiceCustomerSupportServiceClient{stream}
+	return x, nil
+}
+
+type LaptopCPUService_CustomerSupportServiceClient interface {
+	Send(*CustomerSupportRequest) error
+	Recv() (*CustomerSupportResponse, error)
+	grpc.ClientStream
+}
+
+type laptopCPUServiceCustomerSupportServiceClient struct {
+	grpc.ClientStream
+}
+
+func (x *laptopCPUServiceCustomerSupportServiceClient) Send(m *CustomerSupportRequest) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *laptopCPUServiceCustomerSupportServiceClient) Recv() (*CustomerSupportResponse, error) {
+	m := new(CustomerSupportResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // LaptopCPUServiceServer is the server API for LaptopCPUService service.
 type LaptopCPUServiceServer interface {
 	GetCPU(context.Context, *NewLaptopCPU) (*CPUMessage, error)
 	GetLaptopStreamService(*Empty, LaptopCPUService_GetLaptopStreamServiceServer) error
 	UploadImageService(LaptopCPUService_UploadImageServiceServer) error
+	CustomerSupportService(LaptopCPUService_CustomerSupportServiceServer) error
 }
 
 // UnimplementedLaptopCPUServiceServer can be embedded to have forward compatible implementations.
@@ -654,6 +822,9 @@ func (*UnimplementedLaptopCPUServiceServer) GetLaptopStreamService(*Empty, Lapto
 }
 func (*UnimplementedLaptopCPUServiceServer) UploadImageService(LaptopCPUService_UploadImageServiceServer) error {
 	return status.Errorf(codes.Unimplemented, "method UploadImageService not implemented")
+}
+func (*UnimplementedLaptopCPUServiceServer) CustomerSupportService(LaptopCPUService_CustomerSupportServiceServer) error {
+	return status.Errorf(codes.Unimplemented, "method CustomerSupportService not implemented")
 }
 
 func RegisterLaptopCPUServiceServer(s *grpc.Server, srv LaptopCPUServiceServer) {
@@ -725,6 +896,32 @@ func (x *laptopCPUServiceUploadImageServiceServer) Recv() (*UploadImageRequest, 
 	return m, nil
 }
 
+func _LaptopCPUService_CustomerSupportService_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(LaptopCPUServiceServer).CustomerSupportService(&laptopCPUServiceCustomerSupportServiceServer{stream})
+}
+
+type LaptopCPUService_CustomerSupportServiceServer interface {
+	Send(*CustomerSupportResponse) error
+	Recv() (*CustomerSupportRequest, error)
+	grpc.ServerStream
+}
+
+type laptopCPUServiceCustomerSupportServiceServer struct {
+	grpc.ServerStream
+}
+
+func (x *laptopCPUServiceCustomerSupportServiceServer) Send(m *CustomerSupportResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *laptopCPUServiceCustomerSupportServiceServer) Recv() (*CustomerSupportRequest, error) {
+	m := new(CustomerSupportRequest)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 var _LaptopCPUService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "proto.LaptopCPUService",
 	HandlerType: (*LaptopCPUServiceServer)(nil),
@@ -743,6 +940,12 @@ var _LaptopCPUService_serviceDesc = grpc.ServiceDesc{
 		{
 			StreamName:    "UploadImageService",
 			Handler:       _LaptopCPUService_UploadImageService_Handler,
+			ClientStreams: true,
+		},
+		{
+			StreamName:    "CustomerSupportService",
+			Handler:       _LaptopCPUService_CustomerSupportService_Handler,
+			ServerStreams: true,
 			ClientStreams: true,
 		},
 	},
