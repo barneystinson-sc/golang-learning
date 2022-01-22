@@ -7,6 +7,7 @@ import (
 	"net"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 func main() {
@@ -15,6 +16,7 @@ func main() {
 	laptopService := service.NewLaptopServer(newImageStore)
 
 	pb.RegisterLaptopCPUServiceServer(grpcServer, laptopService)
+	reflection.Register(grpcServer)
 	listener, err := net.Listen("tcp", ":5000")
 	if err != nil {
 		fmt.Println("Error while starting grpc server", err.Error())
