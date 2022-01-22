@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = "./;pb";
+package proto;
+
+message CPUMessage {
+    string brand = 1; //Brand of the CPU
+    string name = 2; //Name of the CPU
+    uint32 number_threads = 3;
+    uint32 number_cores = 4;
+}
+

@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+import "processor_message.proto";
+package proto;
+option go_package = "./;pb";
+
+message NewLaptopCPU{
+    string purchase_token=1;
+}
+
+message GetLaptopStream{
+    CPUMessage cPUMessage = 1;
+}
+
+message Empty{
+}
+
+message UploadImageRequest{
+    oneof data {
+        ImageInfo image_data = 1;
+        bytes chunk_data = 2;
+    }
+}
+
+message ImageInfo{
+    string laptop_id = 1;
+    string image_type = 2;
+}
+
+message UploadImageResponse{
+    string id = 1;
+    uint32 size = 2;
+}
+
+service LaptopCPUService {
+    rpc GetCPU (NewLaptopCPU) returns (CPUMessage);
+    rpc GetLaptopStreamService (Empty) returns (stream GetLaptopStream);
+    rpc UploadImageService(stream UploadImageRequest) returns (UploadImageResponse);
+}
